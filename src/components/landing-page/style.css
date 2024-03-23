@@ -1,0 +1,90 @@
+:root {
+  --dim-black: #2e2a2a;
+  --bright-black: black;
+}
+
+.container {
+  display: flex;
+  background: var(--dim-black);
+  width: 100vw;
+  height: 100vw;
+}
+
+.main-container {
+  height: 100vh;
+  background: inherit;
+  width: 70vw;
+  padding: 1rem;
+}
+
+.main-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 12%;
+  width: 100%;
+  padding: 2rem;
+  background: var(--bright-black);
+}
+
+.app-title {
+  color: yellow;
+  font-size: 2.5rem;
+}
+
+.auth-link {
+  color: white;
+  width: fit-content;
+  height: fit-content;
+  padding: 1rem;
+  font-size: 2rem;
+  border-radius: 2rem;
+  text-decoration: none;
+}
+
+.auth-link:hover {
+  border: none;
+  color: black;
+  background: white;
+}
+
+.main {
+  width: 90%;
+  height: 85%;
+  color: white;
+  background: black;
+}
+
+.main-head {
+  margin: .5rem 0;
+  padding: 1.5rem;
+  text-align: left;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  color: white;
+  border-radius: 2rem;
+  background: var(--bright-black);
+}
+
+.main-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+  height: 80vh;
+  padding: 2rem 1rem;
+  background: var(--dim-black);
+  overflow: auto;
+}
+
+
+
+.section-item {
+  width: 30rem;
+  height: 30rem;
+  background: black;
+}

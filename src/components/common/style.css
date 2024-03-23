@@ -1,0 +1,161 @@
+:root {
+  --dim-black: #2e2a2a;
+  --bright-black: black;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 8rem;
+  width: 60vw;
+  border-radius: 2rem;
+  padding: 0 1.5rem;
+  background: #fff;
+}
+  
+.app-logo {
+  position: relative;
+  display: flex;
+  width: 5rem;
+  height: 5rem;
+}
+
+.app-logo .logo {
+  position: relative;
+}
+
+.app-logo .logo::before {
+  content: "";
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  /* border: 2px solid black; */
+  background: red;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.app-logo .logo::after {
+  position: absolute;
+  left: 2rem;
+  content: "";
+  width: 5rem;
+  height: 5rem;
+  /* border: 2px solid black; */
+  background: blue;
+  border-radius: 50%;
+}
+
+.app-auth {
+  cursor: pointer;
+  border: 2px solid black;
+  padding: .6rem;
+  font-size: 2.5rem;
+  border-radius: 2rem;
+  text-decoration: none;
+}
+
+.app-auth:hover {
+  border: none;
+  padding: .6rem;
+  background: #c73ecc;
+  border: 2px solid #c73ecc;
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  height: 100vh;
+  color: white;
+  padding: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: var(--dim-black);
+  font-size: 2rem;
+}
+
+.nav-list {
+  display: inline-flex;
+  height: 30%;
+  border-radius: 2rem;;
+  flex-direction: column;
+  width: 100%;
+  padding: 3rem;
+  background: black;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.aside-other-container {
+  background: inherit;
+  height: 65%;
+  width: 100%;
+  overflow: auto;
+}
+
+.apt-head-container {
+  display: inline-flex;
+  position: sticky;
+  top: 0rem;
+  margin: 0 0 1rem 0;
+  padding: 1rem 0;
+  flex-direction: row;
+  background: black;
+  align-items: center;
+  justify-content: space-around;
+  height: fit-content;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.add-apt-bttn {
+  width: fit-content;
+  height: fit-content;
+  padding: .3rem 1.3rem;
+  text-align: center;
+  font-size: 3rem;
+  text-decoration: none;
+}
+
+.add-apt-bttn:hover {
+  background: green;
+  border-radius: 50%;
+
+}
+
+.apts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: black;
+  margin: 1rem 0;
+  padding: 1rem;
+  height: 35%;
+  border-radius: 2rem;
+}
+
+.apt-head-text {
+  font-size: 2rem;
+}
+
+.apt-text {
+  font-size: 1.5rem;
+}
+
+.apt-link {
+  margin: 1rem 0;
+  color: black;
+  align-self: center;
+  width: fit-content;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  background: white;
+  text-decoration: none;
+}
+
+.apt-link {
+
+}

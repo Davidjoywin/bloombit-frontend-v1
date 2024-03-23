@@ -1,0 +1,134 @@
+{
+  "professional": [
+    {
+      "Primary Care Medicine": [
+        "Family Medicine",
+        "General Internal Medicine",
+        "General Pediatrics"
+      ]
+    },
+    {
+      "Surgical Specialties": [
+        "General Surgery",
+        "Orthopedic Surgery",
+        "Neurosurgery",
+        "Cardiothoracic Surgery",
+        "Plastic Surgery",
+        "Ophthalmology (Eye Surgery)",
+        "Otolaryngology (Ear, Nose, and Throat Surgery)",
+        "Urology",
+        "Gynecology (including Obstetrics)"
+      ]
+    },
+    {
+      "Medical Specialties": [
+        "Cardiology (Heart Diseases)",
+        "Endocrinology (Hormonal Disorders)",
+        "Gastroenterology (Digestive System Disorders)",
+        "Hematology (Blood Disorders)",
+        "Infectious Diseases",
+        "Nephrology (Kidney Diseases)",
+        "Pulmonology (Respiratory Diseases)",
+        "Rheumatology (Autoimmune Diseases)",
+        "Neurology (Nervous System Disorders)",
+        "Dermatology (Skin Diseases)",
+        "Allergy and Immunology"
+      ]
+    },
+    {
+      "Diagnostic Specialties": [
+        "Radiology",
+        "Pathology",
+        "Clinical Laboratory Medicine"
+      ]
+    },
+    {
+      "Anesthesiology and Pain Management": [
+        "Anesthesiology",
+        "Pain Medicine"
+      ]
+    },
+    {
+      "Psychiatry and Behavioral Health": [
+        "Psychiatry",
+        "Child and Adolescent Psychiatry",
+        "Addiction Psychiatry",
+        "Geriatric Psychiatry",
+        "Psychosomatic Medicine"
+      ]
+    },
+    {
+      "Emergency Medicine": []
+    },
+    {
+      "Preventive Medicine": [
+        "Public Health",
+        "Occupational Medicine",
+        "Aerospace Medicine",
+        "Environmental Medicine"
+      ]
+    },
+    {
+      "Medical Subspecialties": [
+        "Critical Care Medicine",
+        "Palliative Care",
+        "Sleep Medicine",
+        "Sports Medicine"
+      ]
+    },
+    {
+      "Alternative and Complementary Medicine": [
+        "Acupuncture",
+        "Chiropractic Medicine",
+        "Naturopathic Medicine",
+        "Traditional Chinese Medicine",
+        "Ayurveda"
+      ]
+    },
+    {
+      "Medical Research": [
+        "Clinical Research",
+        "Basic Medical Sciences Research",
+        "Translational Medicine"
+      ]
+    },
+    {
+      "Global Health and International Medicine": [
+        "Veterinary Medicine: (For the treatment of animals)"
+      ]
+    },
+    {
+      "Dental Medicine": [
+        "General Dentistry",
+        "Orthodontics",
+        "Oral and Maxillofacial Surgery",
+        "Endodontics",
+        "Periodontics",
+        "Pediatric Dentistry",
+        "Prosthodontics"
+      ]
+    },
+    {
+      "Nursing Specialties": [
+        "Nurse Practitioner (NP)",
+        "Nurse Anesthetist (CRNA)",
+        "Nurse Midwife (CNM)",
+        "Nurse Educator",
+        "Nurse Researcher",
+        "Nurse Administrator"
+      ]
+    },
+    {
+      "Allied Health Professions": [
+        "Physical Therapy",
+        "Occupational Therapy",
+        "Speech-Language Pathology",
+        "Clinical Nutrition",
+        "Medical Laboratory Science",
+        "Radiologic Technology",
+        "Pharmacy",
+        "Respiratory Therapy"
+      ]
+    }
+  ]
+}
