@@ -9,9 +9,9 @@ const Main = () => {
       <div className="main-container">
         <header className="main-header">
           <div className="app-title">BloomBit</div>
-          <Link className="auth-link">Login</Link>
+          <Link to='/auth/login' className="auth-link">Login</Link>
         </header>
-        <main classsName="main">
+        <main className="main">
           <h3 className="main-head">Popular Healthcare</h3>
           <div className="main-section">
             <div className="section-item">health item</div>

@@ -16,25 +16,25 @@ const Aside = () => {
         </div>
         <div className="apts">
           <h1 className="apt-head-text">Your Appointments</h1>
-          <p class className="apt-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p className="apt-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           <Link className="apt-link">Set an Appointment</Link>
         </div>
 
         <div className="apts">
           <h1 className="apt-head-text">Your Appointments</h1>
-          <p class className="apt-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p className="apt-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           <Link className="apt-link">Set an Appointment</Link>
         </div>
 
         <div className="apts">
           <h1 className="apt-head-text">Your Appointments</h1>
-          <p class className="apt-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p className="apt-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           <Link className="apt-link">Set an Appointment</Link>
         </div>
 
         <div className="apts">
           <h1 className="apt-head-text">Your Appointments</h1>
-          <p class className="apt-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p className="apt-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           <Link className="apt-link">Set an Appointment</Link>
         </div>
       </div>
