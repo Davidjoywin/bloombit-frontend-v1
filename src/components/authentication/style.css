@@ -1,3 +1,8 @@
+:root {
+  --dim-black: #2e2a2a;
+  --bright-black: black;
+}
+
 .login-container {
   display: flex;
   position: absolute;
@@ -5,7 +10,8 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: calc(100vh - 10rem);
+  height: 100%;
+  background: var(--dim-black);
 }
   
 .login-form {
@@ -17,8 +23,9 @@
   max-width: 80rem;
   height: 70%;
   padding: 4rem 0;
+  overflow: auto;
   border-radius: 2rem;
-  background: #fff;
+  background: var(--bright-black);
   }
 
 .register-form {
@@ -31,17 +38,20 @@
   height: 80%;
   padding: 4rem 0;
   border-radius: 2rem;
-  background: #fff;
+  overflow: auto;
+  background: var(--bright-black);
 }
 
 .form-heading {
   font-size: 6rem;
   opacity: 0.8;
+  color: white;
 }
 
 .form-heading-register {
   font-size: 4rem;
   opacity: 0.8;
+  color: white;
 }
 
 .label-input {
@@ -49,6 +59,7 @@
   flex-direction: column;
   gap: 2rem;
   width: 70%;
+  color: white;
 }
 
 .label {
@@ -61,8 +72,11 @@
   height: 5rem;
   font-size: 2.5rem;
   padding: 0 5px;
-  font-style: italic;
-  border-bottom: 2px solid black;
+  font-style: normal;
+  font-weight: 100;
+  color: white;
+  background: var(--dim-black);
+  border-bottom: 2px solid white;
 }
 
 .input::placeholder {
@@ -77,10 +91,12 @@
   padding: 8px;
   font-size: 2rem;
   width: fit-content;
-  background: #fdfcfd
+  color: white;
+  border: none;
 }
 
 .submit-login {
+  background: var(--dim-black);
   cursor: pointer;
   border-radius: 2rem;
 }
@@ -102,4 +118,8 @@
 
 .register:hover {
   text-decoration: underline;
+}
+
+.auth-footer {
+  color: white;
 }

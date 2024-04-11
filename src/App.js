@@ -1,10 +1,14 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './components/authentication/login';
+import Logout from './components/authentication/logout';
 import Registration from './components/authentication/registration';
 // import MainPage from './components/landing-page/index';
 import Aside from './components/common/aside';
-import Main from './components/landing-page/main';
+import Main from './components/pages/main';
+import Specialist from './components/pages/specialist-page';
+import Professional from './components/pages/professional-page';
 import './App.css';
+
 
 function App() {
   return (
@@ -16,13 +20,16 @@ function App() {
           
           <Route path="auth">
             <Route path="login" element={<Login />} />
+            <Route path="logout" element= {<Logout />} />
             <Route path="register" element={<Registration />} />
           </Route>
 
           <Route path='/'>
             <Route index element={<Aside />} />
-            <Route path="main" element={ <Main /> } />
-            <Route path='' element={ <Navigate to="/" /> } />
+            <Route path="main" element={<Main />} />
+            <Route path='specialist' element={<Specialist/>} />
+            <Route path='professional' element={<Professional />} />
+            <Route path='' element={<Navigate to="/" />} />
           </Route>
           
         </Routes>

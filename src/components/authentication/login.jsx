@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, createContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+// import axios from 'axios';
 
 import Header from '../common/header';
 import './style.css';
+
 
 const Login = () => {
 
@@ -10,7 +12,9 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const URL = "http://127.0.0.1:8000/api/account/auth"
+  // axios.defaults.baseURL = "http://127.0.0.1:8000/api"
+
+  const URL = "http://127.0.0.1:8080/api/account/auth"
   
   const HEADERS = {
     "Content-Type": "application/json"
@@ -30,7 +34,6 @@ const Login = () => {
   const submitForm = (e) => {
     e.preventDefault();
     loginUser();
-    setUsername("");
     setPassword("");
   }
 
@@ -39,19 +42,25 @@ const Login = () => {
     fetch(URL, OPTIONS)
     .then(response => {
       if (!response.ok) {
-        throw new Error("Request failed");
+        alert("Login credential incorrect");
+        return navigate("/auth/login");
       }
       // parse the response as JSON
       return response.json();
     })
     .then(res => {
-      navigate("/main");
+      if (!res) {
+        return navigate("/auth/login");
+      }
+      localStorage.setItem("access_token", res.token.access.token);
+      localStorage.setItem("refresh_token", res.token.refresh.token);
+      return navigate("/main")
     })
   }
 
   return (
       <>
-        <Header />
+        {/* <Header /> */}
         <div className="login-container">
           <form className='login-form' onSubmit={submitForm}>
             <h2 className="form-heading">Login</h2>
@@ -71,7 +80,7 @@ const Login = () => {
 
             <input type="submit" className="submit-login auth-bttn" />
             <div className="register-container">
-              <span>I have no account yet?</span>
+              <span class='auth-footer'>I have no account yet?</span>
               <Link to="/auth/register" className='register auth-bttn'>register</Link>
             </div>
           </form>

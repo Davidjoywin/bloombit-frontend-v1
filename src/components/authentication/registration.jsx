@@ -5,7 +5,7 @@ import Header from '../common/header';
 const Registration = ({username, email, password, phone_number}) => {
     return (
         <>
-        <Header />
+        {/* <Header /> */}
         <div className="login-container">
           <form className='register-form'>
             <h2 className="form-heading-register">Register</h2>
@@ -39,7 +39,7 @@ const Registration = ({username, email, password, phone_number}) => {
 
             <input type="submit" className="submit-login auth-bttn" />
               <div className="register-container">
-              <span>I have an account?</span>
+              <span className="auth-footer">I have an account?</span>
               <Link to="/auth/login" className='register auth-bttn'>login</Link>
               </div>
           </form>

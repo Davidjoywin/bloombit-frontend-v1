@@ -12,6 +12,7 @@
   border-radius: 2rem;
   padding: 0 1.5rem;
   background: #fff;
+  background: red;
 }
   
 .app-logo {
@@ -88,6 +89,15 @@
   justify-content: space-between;
 }
 
+.nav-item {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  text-decoration: underline;
+}
+
 .aside-other-container {
   background: inherit;
   height: 65%;
@@ -158,4 +168,10 @@
 
 .apt-link {
 
+}
+
+@media  screen and (max-width: 800px) {
+  .aside {
+    display: none
+  } 
 }
