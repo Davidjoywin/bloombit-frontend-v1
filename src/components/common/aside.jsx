@@ -1,21 +1,33 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { BASE_URL, get_access_token } from '../../config';
 
 const Aside = () => {
   const [reservations, setReservations] = useState([]);
 
-  let access_token = localStorage.getItem("access_token");
-  const URL = "http://127.0.0.1:8080/api/consultation/user/reservations";
+  let access_token = "";
+  try{
+    access_token = get_access_token();
+  }
+  catch {
+    access_token = null;
+  }
+
+  const URL = `${BASE_URL}/consultation/user/reservations`;
   const HEADERS = {
     "Authorization": `Bearer ${access_token}`
   }
+
   useEffect(() => {
     fetch(URL, {headers: HEADERS})
     .then(response => {
       if (!response.ok) {
-        return
+        console.log("hello world")
       }
-      return response.json();
+      if (response.status == 401) {
+        console.log(response.status);
+      }
+      // return response.json();
     })
     .then(res => {
       if (!res) {
@@ -23,7 +35,7 @@ const Aside = () => {
       }
       setReservations(res.data);
     })
-  }, [])
+  }, [reservations])
 
   return (
     <aside className="aside">
@@ -36,7 +48,7 @@ const Aside = () => {
       <div className="aside-other-container">
         <div className="apt-head-container">
           <h5 className="apt-head">Your appointments</h5>
-          <Link className="add-apt-bttn">+</Link>
+          <Link to="/appointment" className="add-apt-bttn">+</Link>
         </div>
         <div className="apts">
           <h1 className="apt-head-text">Your Appointments</h1>

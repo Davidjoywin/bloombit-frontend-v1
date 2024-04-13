@@ -69,6 +69,7 @@
   color: white;
   border-radius: 2rem;
   background: var(--bright-black);
+  /* background: red; */
 }
 
 .main-section {
@@ -114,3 +115,13 @@
 .specialty {
   font-size: 1.5rem;
 }
+
+.appmt-form {
+  width: 100%;
+  height: 100%;
+  background: red;
+}
+
+/* -------------------page forms--------------------------- */
+
+/*--------------------end of form--------------------------*/

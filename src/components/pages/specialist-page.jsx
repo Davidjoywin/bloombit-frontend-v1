@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+
 import Aside from '../common/aside';
+import { BASE_URL, get_access_token } from '../../config';
 import image from '../../medic.jpeg'
 import Login_link from '../common/login-link';
 import Logout_link from '../common/logout-link';
@@ -12,8 +14,8 @@ const Specialist = () => {
   const [isLoggedIn, setLogin] = useState();
   // const navigate = useNavigate(); 
 
-  const ACCESS_TOKEN = localStorage.getItem("access_token");
-  const URL = "http://127.0.0.1:8080/api/account/user"
+  const ACCESS_TOKEN = get_access_token();
+  const URL = `${BASE_URL}account/user`;
   const HEADERS = {
     "Authorization": `Bearer ${ACCESS_TOKEN}`
   }

@@ -1,8 +1,7 @@
 import { Navigate } from 'react-router-dom';
 
 const Logout = () => {
-  localStorage.removeItem("access_token")
-  localStorage.removeItem("refresh_token")
+  localStorage.removeItem("login");
   return <Navigate to="/main" />
 }
 

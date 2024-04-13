@@ -74,7 +74,7 @@
   align-items: flex-start;
   justify-content: space-between;
   background: var(--dim-black);
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .nav-list {
@@ -83,19 +83,25 @@
   border-radius: 2rem;;
   flex-direction: column;
   width: 100%;
-  padding: 3rem;
+  padding: 3rem 0;
   background: black;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
 }
 
 .nav-item {
+  width: 80%;
+  text-align: left;
+  padding: 1rem;
   color: white;
   text-decoration: none;
 }
 
-.nav-item:hover {
-  text-decoration: underline;
+.nav-item:hover, .nav-item:active {
+  color: black;
+  text-align: center;
+  background: rgb(219, 204, 204);
+  border-radius: 2rem;
 }
 
 .aside-other-container {
@@ -147,6 +153,48 @@
 }
 
 .apt-head-text {
+  font-size: 2rem;
+}
+
+@keyframes alert-motion {
+  0% {
+    top: -8rem;
+  }
+  25% {
+    top: 2rem;
+  }
+  50% {
+    top: 2rem;
+  }
+  75% {
+    top: 2rem;
+  }
+  100% {
+    top: -8rem;
+  }
+}
+
+.alert-container {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+  justify-content: center;
+  top: -8rem;
+  width: 70vw;
+  color: rgb(248, 246, 246);
+  height: 6rem;
+  background: #00800080;
+  border-radius: 2rem;
+  text-align: center;
+  border: 2px solid green;
+  animation-name: alert-motion;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out
+}
+
+.alert-container span {
   font-size: 2rem;
 }
 

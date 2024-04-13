@@ -2,8 +2,10 @@ import { useState, createContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 // import axios from 'axios';
 
-import Header from '../common/header';
+// import Header from '../common/header';
+import { BASE_URL } from '../../config';
 import './style.css';
+import { set_operation } from '../../config';
 
 
 const Login = () => {
@@ -14,7 +16,7 @@ const Login = () => {
 
   // axios.defaults.baseURL = "http://127.0.0.1:8000/api"
 
-  const URL = "http://127.0.0.1:8080/api/account/auth"
+  const URL = `${BASE_URL}account/auth`;
   
   const HEADERS = {
     "Content-Type": "application/json"
@@ -38,11 +40,10 @@ const Login = () => {
   }
 
   const loginUser = () => {
-    console.log(username, password)
     fetch(URL, OPTIONS)
     .then(response => {
       if (!response.ok) {
-        alert("Login credential incorrect");
+        // Alert("Login credential incorrect");
         return navigate("/auth/login");
       }
       // parse the response as JSON
@@ -52,8 +53,15 @@ const Login = () => {
       if (!res) {
         return navigate("/auth/login");
       }
-      localStorage.setItem("access_token", res.token.access.token);
-      localStorage.setItem("refresh_token", res.token.refresh.token);
+
+      const login_user = res.user;
+      const token_obj = {};
+      token_obj['access'] = res.token.access.token;
+      token_obj['refresh'] = res.token.refresh.token;
+      login_user['token'] = token_obj;
+
+      localStorage.setItem("login", JSON.stringify(login_user));
+      set_operation('login', true);
       return navigate("/main")
     })
   }
@@ -80,7 +88,7 @@ const Login = () => {
 
             <input type="submit" className="submit-login auth-bttn" />
             <div className="register-container">
-              <span class='auth-footer'>I have no account yet?</span>
+              <span className='auth-footer'>I have no account yet?</span>
               <Link to="/auth/register" className='register auth-bttn'>register</Link>
             </div>
           </form>

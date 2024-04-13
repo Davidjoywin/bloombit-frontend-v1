@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+
 import Aside from '../common/aside';
-import image from '../../medic.jpeg'
+import Alert from '../common/alert';
+import image from '../../medic.jpeg';
 import Login_link from '../common/login-link';
 import Logout_link from '../common/logout-link';
 import './style.css';
@@ -12,28 +14,11 @@ const Main = () => {
   const [isLoggedIn, setLogin] = useState();
   // const navigate = useNavigate(); 
 
-  const ACCESS_TOKEN = localStorage.getItem("access_token");
-  const URL = "http://127.0.0.1:8080/api/account/user"
-  const HEADERS = {
-    "Authorization": `Bearer ${ACCESS_TOKEN}`
-  }
+  const login_user = JSON.parse(localStorage.getItem("login"));
 
   useEffect(() => {
-    fetch(URL, {
-      headers: HEADERS
-    })
-
-    .then(response => response.json())
-
-    .then(res => {
-      if (!res) {
-        setLogin(false)
-      } else {
-        setUser(res.user);
-        setLogin(res.status);
-      }
-    })
-  }, [])
+    login_user ? setLogin(true) : setLogin(false);
+  }, [isLoggedIn])
 
   return (
     <div className="container">
