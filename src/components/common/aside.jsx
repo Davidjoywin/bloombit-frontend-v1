@@ -22,7 +22,7 @@ const Aside = () => {
     fetch(URL, {headers: HEADERS})
     .then(response => {
       if (!response.ok) {
-        console.log("hello world")
+        return response;
       }
       if (response.status == 401) {
         console.log(response.status);

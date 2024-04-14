@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8000/api/"
+const BASE_URL = "http://localhost:3030/api"
 
 
 const get_auth_user = () => {
@@ -36,4 +36,51 @@ const set_operation = (operation, status) => {
   localStorage.setItem("operations", JSON.stringify(storage));
 }
 
-export { get_auth_user, get_access_token, get_operation, get_operations, set_operation, BASE_URL };
+const send_alert = () => {
+
+  const operations = get_operations();
+  
+  for (var op in operations) {
+
+    let operation_object = operations[op];
+    
+    if (operation_object['status']) {
+      setTimeout(() => create_operations(), 1000);
+      return operation_object['text'];
+    }
+  }
+}
+
+const create_operations = () => {
+  let operations = {
+    "login": {"text": "User Login Successfully", "status": false},
+    "signup": {"text": "You registered successfully", "status": false},
+    "reservation": {"text": "New reservation made successfully", "status": false}
+  }
+  localStorage.setItem("operations", JSON.stringify(operations));
+}
+
+const sendRequest = (URL, HEADERS) => {
+  fetch(URL, {headers: HEADERS})
+    .then(response => {
+      if (!response.ok) {
+        return response;
+      }
+      if (response.status == 401) {
+        console.log("You are not authorised yet")
+      }
+      if (response.status == 400) {
+        console.log("Bad request sent");
+      }
+
+      // return response.json();
+    })
+    .then(res => {
+      if (!res) {
+        return res
+      }
+      return res.data;
+    })
+}
+
+export { BASE_URL, get_auth_user, get_access_token, get_operation, get_operations, set_operation, send_alert, create_operations };

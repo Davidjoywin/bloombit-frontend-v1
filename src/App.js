@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import Login from './components/authentication/login';
@@ -6,7 +6,7 @@ import Logout from './components/authentication/logout';
 import Registration from './components/authentication/registration';
 // import MainPage from './components/landing-page/index';
 import Main from './components/pages/main';
-import { get_operation, get_operations } from './config';
+import { create_operations } from './config';
 import Aside from './components/common/aside';
 import Alert from './components/common/alert';
 import Specialist from './components/pages/specialist-page';
@@ -17,28 +17,12 @@ import './App.css';
 
 function App() {
 
-  const [user_operation, setUserOperation] = useState({})
-
-  const operations = {
-    "login": {"text": "User Login Successfully", "status": false},
-    "signup": {"text": "You registered successfully", "status": false},
-    "reservation": {"text": "New reservation made successfully", "status": false}
-  }
-  localStorage.setItem("operations", JSON.stringify(operations));
-
-  // useEffect(() => {
-    for (var op in user_operation) {
-      let operation_object = user_operation[op];
-      if (operation_object['status']) {
-        console.log(operation_object['text']);
-        return <Alert text={operation_object['text']} />
-      }
-    }
-  // }, [user_operation,])
+  create_operations();
 
   return (
+    <>
+    <Alert />
     <div className="App">
-      <Alert />
       <BrowserRouter>
         <Routes>
           <Route path="*" element={<h1>Page not found</h1>} />
@@ -62,6 +46,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
+    </>
   );
 }
 

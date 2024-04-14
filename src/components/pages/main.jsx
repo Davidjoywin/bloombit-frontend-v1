@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Aside from '../common/aside';
 import Alert from '../common/alert';
 import image from '../../medic.jpeg';
+// import { get_operations, send_alert } from '../../config';
 import Login_link from '../common/login-link';
 import Logout_link from '../common/logout-link';
 import './style.css';
@@ -18,9 +19,12 @@ const Main = () => {
 
   useEffect(() => {
     login_user ? setLogin(true) : setLogin(false);
-  }, [isLoggedIn])
+  },
+  [isLoggedIn])
 
   return (
+    <>
+    <Alert />
     <div className="container">
       <Aside />
       <div className="main-container">
@@ -147,6 +151,7 @@ const Main = () => {
         </main>
       </div>
     </div>
+    </>
   )
 }
 

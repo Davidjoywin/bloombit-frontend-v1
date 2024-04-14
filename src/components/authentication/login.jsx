@@ -1,4 +1,4 @@
-import { useState, createContext } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 // import axios from 'axios';
 
@@ -16,7 +16,7 @@ const Login = () => {
 
   // axios.defaults.baseURL = "http://127.0.0.1:8000/api"
 
-  const URL = `${BASE_URL}account/auth`;
+  const URL = `${BASE_URL}/account/auth`;
   
   const HEADERS = {
     "Content-Type": "application/json"
