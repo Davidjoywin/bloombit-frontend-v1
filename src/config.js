@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3030/api"
+const BASE_URL = "http://localhost:8080/api"
 
 
 const get_auth_user = () => {
@@ -66,10 +66,10 @@ const sendRequest = (URL, HEADERS) => {
       if (!response.ok) {
         return response;
       }
-      if (response.status == 401) {
+      if (response.status === 401) {
         console.log("You are not authorised yet")
       }
-      if (response.status == 400) {
+      if (response.status === 400) {
         console.log("Bad request sent");
       }
 
@@ -83,4 +83,4 @@ const sendRequest = (URL, HEADERS) => {
     })
 }
 
-export { BASE_URL, get_auth_user, get_access_token, get_operation, get_operations, set_operation, send_alert, create_operations };
+export { BASE_URL, get_auth_user, get_access_token, get_operation, get_operations, set_operation, send_alert, create_operations, sendRequest };

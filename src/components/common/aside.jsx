@@ -24,7 +24,7 @@ const Aside = () => {
       if (!response.ok) {
         return response;
       }
-      if (response.status == 401) {
+      if (response.status === 401) {
         console.log(response.status);
       }
       // return response.json();

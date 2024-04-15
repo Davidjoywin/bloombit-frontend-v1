@@ -20,6 +20,7 @@
   padding: 1rem;
 }
 
+/* ----------------start of header style------------------ */
 .main-header {
   display: flex;
   flex-direction: row;
@@ -29,6 +30,43 @@
   width: 100%;
   padding: 2rem;
   background: var(--bright-black);
+}
+
+@keyframes arrow {
+  0% {
+    width: 8rem
+  }
+
+  100% {
+    width: 10rem;
+  }
+}
+
+.draw-bttn {
+  cursor: pointer;
+  border: none;
+  border-radius: 5rem 5rem 5rem 5rem;
+}
+
+.mobile-arrow {
+  color: red;
+  font-size: 3.5rem;
+  width: 8rem;
+  height: 5rem;
+  background: white;
+}
+
+.out {
+  border-radius: 0 5rem 5rem 0;
+}
+
+.in {
+  border-radius: 5rem 0 0 5rem;
+}
+
+.mobile-arrow:hover {
+  animation-name: arrow;
+  animation-duration: 1.5s;
 }
 
 .app-title {
@@ -51,6 +89,8 @@
   color: black;
   background: white;
 }
+
+/* ----------------end to header style---------------- */
 
 .main {
   width: 100%;
@@ -116,12 +156,11 @@
   font-size: 1.5rem;
 }
 
+/* -------------------page forms--------------------------- */
 .appmt-form {
   width: 100%;
-  height: 100%;
+  height: 95%;
   background: red;
 }
-
-/* -------------------page forms--------------------------- */
 
 /*--------------------end of form--------------------------*/

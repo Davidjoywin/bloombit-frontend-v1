@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Header from '../common/header';
+import Header from '../common/old-header';
 // import './style.css';
 
 const Registration = ({username, email, password, phone_number}) => {

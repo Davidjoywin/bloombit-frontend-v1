@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Aside from '../common/aside';
 import { BASE_URL, get_access_token } from '../../config';
 import image from '../../medic.jpeg'
+import Header from '../common/header';
 import Login_link from '../common/login-link';
 import Logout_link from '../common/logout-link';
 import './style.css';
@@ -40,10 +41,7 @@ const Professional = () => {
     <div className="container">
       <Aside />
       <div className="main-container">
-        <header className="main-header">
-          <div className="app-title">BloomBit</div>
-          { isLoggedIn ?  <Logout_link/> : <Login_link /> }
-        </header>
+        <Header isLoggedIn={isLoggedIn} />
         <main className="main">
           <h3 className="main-head">Professionals</h3>
           <div className="main-section">
