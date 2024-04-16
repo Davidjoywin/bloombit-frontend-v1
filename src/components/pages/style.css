@@ -43,6 +43,7 @@
 }
 
 .draw-bttn {
+  display: none;
   cursor: pointer;
   border: none;
   border-radius: 5rem 5rem 5rem 5rem;
@@ -164,3 +165,34 @@
 }
 
 /*--------------------end of form--------------------------*/
+
+@media  screen and (max-width: 1000px) {
+  .aside {
+    display: none
+  }
+
+  .draw-bttn {
+    display: block;
+  }
+
+  .mobile-main-header {
+    justify-content: flex-end;
+  }
+  
+  .mobile-draw-bttn {
+    z-index: 2
+  }
+  .mobile-app-title {
+    display: none;
+  }
+
+  .mobile-aside {
+    /* position: absolute; */
+    display: block;
+    z-index: 1;
+  } 
+
+  .mobile-main-container {
+    position: absolute;
+  }
+}

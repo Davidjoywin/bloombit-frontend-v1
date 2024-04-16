@@ -51,6 +51,15 @@ const send_alert = () => {
   }
 }
 
+const get_from_storage = (key) => {
+  let storage = JSON.parse(localStorage.getItem(key));
+  return storage;
+}
+
+const store_to_storage = (key, value) => {
+  localStorage.setItem(key, JSON.stringify(value));
+}
+
 const create_operations = () => {
   let operations = {
     "login": {"text": "User Login Successfully", "status": false},
@@ -83,4 +92,47 @@ const sendRequest = (URL, HEADERS) => {
     })
 }
 
-export { BASE_URL, get_auth_user, get_access_token, get_operation, get_operations, set_operation, send_alert, create_operations, sendRequest };
+const add_class = (klass, mobile_klass) => {
+  let element = document.querySelector(klass);
+  element.classList.add(mobile_klass);
+  console.log(element);
+}
+
+const remove_class = (klass, mobile_klass) => {
+  let element = document.querySelector(klass);
+  element.classList.remove(mobile_klass);
+  console.log(element);
+}
+
+const mobile_classes = [
+  'main-header', 'draw-bttn', 'app-title',
+  'aside', 'main-container'
+];
+
+const enable_element_style_behaviour = () => {
+  mobile_classes.forEach(klass => {
+    let _klass = `.${klass}`;
+    let mobile_klass = `mobile-${klass}`;
+    
+    // console.log(_klass, mobile_klass);
+    add_class(_klass, mobile_klass);
+  })
+}
+
+const disable_element_style_behaviour = () => {
+  mobile_classes.forEach(klass => {
+    let _klass = `.${klass}`;
+    let mobile_klass = `mobile-${klass}`;
+    // console.log(_klass,mobile_klass);
+    remove_class(_klass, mobile_klass);
+  })
+}
+
+
+
+export {
+  BASE_URL, get_auth_user, get_access_token, get_operation, get_operations,
+  set_operation, send_alert, create_operations, sendRequest, get_from_storage,
+  store_to_storage, enable_element_style_behaviour, disable_element_style_behaviour,
+  mobile_classes
+};
