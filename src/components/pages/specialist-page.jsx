@@ -14,7 +14,7 @@ const Specialist = () => {
   // const navigate = useNavigate(); 
 
   const ACCESS_TOKEN = get_access_token();
-  const URL = `${BASE_URL}account/user`;
+  const URL = `${BASE_URL}/account/user`;
   const HEADERS = {
     "Authorization": `Bearer ${ACCESS_TOKEN}`
   }

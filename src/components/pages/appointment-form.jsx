@@ -20,9 +20,27 @@ const AppointmentForm = () => {
           <Header isLoggedIn={isLoggedIn} />
           <main className="main">
             <h3 className="main-head">Fill for appointment</h3>
-            <div className="appmt-form">
-              <form>
+            <div className="appmt-form-container">
+              <form className="appmt-form">
+                <div clssName="appt-input-container">
+                  <label className="appt-input-label" >Duration</label>
+                  <input className="appt-num-input" type="number" min="5" step="5" placeholder='5'/>
+                </div>
 
+                <div clssName="appt-input-container">
+                  <label className="appt-input-label" >Recommeded treatment</label>
+                  <textarea className="appt-text-area" />
+                </div>
+
+                <div clssName="appt-input-container">
+                  <label className="appt-input-label" >Prescription</label>
+                  <textarea className="appt-text-area" />
+                </div>
+
+                <div clssName="appt-input-container">
+                  <label className="appt-input-label" >Summary</label>
+                  <input type="text" className="app-text-input" />
+                </div>
               </form>
             </div>
           </main>

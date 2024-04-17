@@ -95,13 +95,11 @@ const sendRequest = (URL, HEADERS) => {
 const add_class = (klass, mobile_klass) => {
   let element = document.querySelector(klass);
   element.classList.add(mobile_klass);
-  console.log(element);
 }
 
 const remove_class = (klass, mobile_klass) => {
   let element = document.querySelector(klass);
   element.classList.remove(mobile_klass);
-  console.log(element);
 }
 
 const mobile_classes = [
@@ -113,8 +111,6 @@ const enable_element_style_behaviour = () => {
   mobile_classes.forEach(klass => {
     let _klass = `.${klass}`;
     let mobile_klass = `mobile-${klass}`;
-    
-    // console.log(_klass, mobile_klass);
     add_class(_klass, mobile_klass);
   })
 }
@@ -123,7 +119,6 @@ const disable_element_style_behaviour = () => {
   mobile_classes.forEach(klass => {
     let _klass = `.${klass}`;
     let mobile_klass = `mobile-${klass}`;
-    // console.log(_klass,mobile_klass);
     remove_class(_klass, mobile_klass);
   })
 }

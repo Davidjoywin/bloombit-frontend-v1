@@ -15,10 +15,6 @@ const Main = () => {
   const [isLoggedIn, setLogin] = useState();
   // const navigate = useNavigate(); 
 
-  const draw = useContext(DrawContext);
-
-  console.log(draw);
-
   const login_user = JSON.parse(localStorage.getItem("login"));
 
   useEffect(() => {
