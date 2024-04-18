@@ -11,7 +11,7 @@
 }
 
 ::-webkit-scrollbar {
-  behavior: smooth;
+  scroll-behavior: smooth;
   width: .6rem;
   height: .6rem
 }
