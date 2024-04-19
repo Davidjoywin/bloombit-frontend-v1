@@ -218,6 +218,36 @@
 
 }
 
+/* -------------------------Reservation state---------------------- */
+
+.r-state {
+  width: fit-content;
+  height: fit-content;
+  font-size: 1.3rem;
+  padding: 1rem;
+  color: white;
+  border-radius: 2rem;
+  border: none;
+}
+
+.r-completed {
+  background: green;
+}
+
+.r-cancelled {
+  background: red;
+}
+
+.r-ongoing {
+  background: #a33da3
+}
+
+.r-not-time {
+  background: #2a2a88
+}
+
+/* --------------------------end of Reservation state------------------------- */
+
 @media screen and (max-width) {
 
 }

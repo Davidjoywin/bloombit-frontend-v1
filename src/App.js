@@ -10,10 +10,12 @@ import { create_operations } from './config';
 import Aside from './components/common/aside';
 import Alert from './components/common/alert';
 import DrawContext from './components/common/context';
+import Reservation from './components/pages/reservation';
 import Specialist from './components/pages/specialist-page';
-import Professional from './components/pages/professional-page';
 import Appointment from './components/pages/appointment-form';
+import Professional from './components/pages/professional-page';
 import './App.css';
+import ReservationState from './components/common/reservation-state';
 
 
 function App() {
@@ -35,12 +37,14 @@ function App() {
           </Route>
 
           <Route path='/'>
-            <Route index element={<Aside />} />
+            <Route index element={<Main />} />
             <Route path='alert' element={<Alert />} />
-            <Route path="main" element={<Main />} />
+            <Route path='r-test' element={<ReservationState />} />
+            <Route path="aside" element={<Aside />} />
             <Route path='specialist' element={<Specialist/>} />
             <Route path='professional' element={<Professional />} />
             <Route path='appointment' element={<Appointment />} />
+            <Route path='reservation/:id' element={<Reservation />} />
             <Route path='' element={<Navigate to="/" />} />
           </Route>
           

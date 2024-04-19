@@ -53,25 +53,25 @@ const Aside = () => {
         <div className="apts">
           <h1 className="apt-head-text">Your Appointments</h1>
           <p className="apt-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <Link className="apt-link">Set an Appointment</Link>
+          <Link to="/reservation/:id" className="apt-link">Set an Appointment</Link>
         </div>
 
         <div className="apts">
           <h1 className="apt-head-text">Your Appointments</h1>
           <p className="apt-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <Link className="apt-link">Set an Appointment</Link>
+          <Link to="/reservation/:id" className="apt-link">Set an Appointment</Link>
         </div>
 
         <div className="apts">
           <h1 className="apt-head-text">Your Appointments</h1>
           <p className="apt-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <Link className="apt-link">Set an Appointment</Link>
+          <Link to="/reservation/:id" className="apt-link">Set an Appointment</Link>
         </div>
 
         <div className="apts">
           <h1 className="apt-head-text">Your Appointments</h1>
           <p className="apt-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <Link className="apt-link">Set an Appointment</Link>
+          <Link to="/reservation/:id" className="apt-link">Set an Appointment</Link>
         </div>
       </div>
     </aside>

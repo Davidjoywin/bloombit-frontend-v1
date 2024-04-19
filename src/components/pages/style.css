@@ -51,9 +51,9 @@
 
 .mobile-arrow {
   color: red;
-  font-size: 3.5rem;
+  font-size: 3rem;
   width: 8rem;
-  height: 5rem;
+  height: 4rem;
   background: white;
 }
 
@@ -246,6 +246,79 @@
 }
 /*--------------------end of form--------------------------*/
 
+/* --------------------------Reservation------------------------- */
+
+.reservation-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  background: var(--bright-black);
+  overflow: auto;
+}
+
+.reservation-head {
+  margin: 0 0 8rem 0;
+  font-weight: 300;
+  font-size: 3rem;
+}
+
+.reservation-detail-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  margin: 2rem 0;
+  background: var(--dim-black);
+}
+
+.sub-info {
+  font-size: 2.5rem;
+}
+
+.user-info {
+  position: relative;
+  top: .5rem;
+  width: 50%;
+  text-align: left;
+  padding: .5rem;
+  font-size: 1.5rem;
+  font-weight: 50;
+}
+
+.reservation-bttn {
+  display: flex;
+  flex-direction: row;
+  padding: 0 2rem;
+  justify-content: space-between;
+  margin: 0 0 5rem 0;
+}
+.reservation-state {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.reservation-edit-bttn,
+.reservation-delete-bttn {
+  font-size: 2.5rem;
+  padding: .5rem 2rem;
+  color: white;
+  cursor: pointer;
+  background: inherit;
+  border: 2px solid white;
+  border-radius: 2rem;
+}
+
+.reservation-edit-bttn:hover,
+.reservation-delete-bttn:hover {
+  border: none;
+  background: purple;
+}
+
+/* -----------------------end to reservation---------------------- */
+
+
 @media  screen and (max-width: 1000px) {
   .aside {
     display: none
@@ -258,7 +331,7 @@
   .mobile-main-header {
     justify-content: flex-end;
   }
-  
+
   .mobile-draw-bttn {
     z-index: 2
   }
@@ -271,7 +344,7 @@
     width: 40rem;
     display: flex;
     z-index: 1;
-  } 
+  }
 
   .mobile-main-container {
     position: absolute;
