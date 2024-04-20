@@ -35,12 +35,12 @@ const Aside = () => {
       }
       setReservations(res.data);
     })
-  }, [reservations])
+  }, reservations)
 
   return (
     <aside className="aside">
       <div className="nav-list">
-        <Link to="/main" className="nav-item">Home</Link>
+        <Link to="/" className="nav-item">Home</Link>
         <Link to="/professional" className="nav-item">Professionals</Link>
         <Link to="/specialist" className="nav-item">Specialist Group</Link>
         <Link className="nav-item">Search</Link>
@@ -53,25 +53,25 @@ const Aside = () => {
         <div className="apts">
           <h1 className="apt-head-text">Your Appointments</h1>
           <p className="apt-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <Link to="/reservation/:id" className="apt-link">Set an Appointment</Link>
+          <Link to="/reservation/5445" className="apt-link">Set an Appointment</Link>
         </div>
 
         <div className="apts">
           <h1 className="apt-head-text">Your Appointments</h1>
           <p className="apt-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <Link to="/reservation/:id" className="apt-link">Set an Appointment</Link>
+          <Link to="/reservation/343" className="apt-link">Set an Appointment</Link>
         </div>
 
         <div className="apts">
           <h1 className="apt-head-text">Your Appointments</h1>
           <p className="apt-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <Link to="/reservation/:id" className="apt-link">Set an Appointment</Link>
+          <Link to="/reservation/3455" className="apt-link">Set an Appointment</Link>
         </div>
 
         <div className="apts">
           <h1 className="apt-head-text">Your Appointments</h1>
           <p className="apt-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <Link to="/reservation/:id" className="apt-link">Set an Appointment</Link>
+          <Link to="/reservation/5464" className="apt-link">Set an Appointment</Link>
         </div>
       </div>
     </aside>

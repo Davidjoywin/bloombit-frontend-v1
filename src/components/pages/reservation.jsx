@@ -1,35 +1,51 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import Aside from '../common/aside';
 import Alert from '../common/alert';
-import image from '../../medic.jpeg';
-// import { get_operations, send_alert } from '../../config';
+import { action_confirmation } from '../../config';
 import Header from '../common/header';
 import ReservationState from '../common/reservation-state';
+import ActionConfirmation from '../common/action-confirmation';
 import './style.css';
 
 
 const Reservation = () => {
 
   const { id } = useParams();
+  console.log(id);
 
-  const [reservation_state, set_Reservation_state] = useState('completed');
+  const [reservation_state, setReservationState] = useState('completed');
 
-  const [user, setUser] = useState();
+  const [action, setAction] = useState(true);
+
+  // const [user, setUser] = useState();
   const [isLoggedIn, setLogin] = useState();
   // const navigate = useNavigate(); 
 
   const login_user = JSON.parse(localStorage.getItem("login"));
 
+  const activate_action_confirmation = () => {
+    setAction(true);
+    action_confirmation(true)
+  }
+
+  const deactivate_action_confirmation = () => {
+    setAction(false);
+    action_confirmation(false);
+  }
+
   useEffect(() => {
     login_user ? setLogin(true) : setLogin(false);
-  }, [isLoggedIn])
+  }, [login_user])
 
   return (
     <>
     <Alert />
     <div className="container">
+      <div className="action">
+        {(action) ? <ActionConfirmation yes_func={() => setReservationState(true)} no_func={() => deactivate_action_confirmation()} /> : <></>}
+      </div>
       <Aside />
       <div className="main-container">
         <Header isLoggedIn={isLoggedIn}/>
@@ -77,7 +93,7 @@ const Reservation = () => {
               </div>
               <div className="reservation-bttn">
                 <button className="reservation-edit-bttn">Edit</button>
-                <button className="reservation-delete-bttn">Cancel</button>
+                <button className="reservation-delete-bttn" onClick={() => activate_action_confirmation()} >Cancel</button>
               </div>
             </div>
           </div>

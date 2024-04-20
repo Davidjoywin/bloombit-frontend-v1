@@ -15,7 +15,7 @@ import Specialist from './components/pages/specialist-page';
 import Appointment from './components/pages/appointment-form';
 import Professional from './components/pages/professional-page';
 import './App.css';
-import ReservationState from './components/common/reservation-state';
+import ActionConfirmation from './components/common/action-confirmation';
 
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
           <Route path='/'>
             <Route index element={<Main />} />
             <Route path='alert' element={<Alert />} />
-            <Route path='r-test' element={<ReservationState />} />
+            <Route path='r-test' element={<ActionConfirmation />} />
             <Route path="aside" element={<Aside />} />
             <Route path='specialist' element={<Specialist/>} />
             <Route path='professional' element={<Professional />} />

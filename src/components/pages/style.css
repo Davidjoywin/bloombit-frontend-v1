@@ -270,10 +270,11 @@
   padding: 1rem 2rem;
   margin: 2rem 0;
   background: var(--dim-black);
+  overflow: auto;
 }
 
 .sub-info {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .user-info {
@@ -295,7 +296,7 @@
 }
 .reservation-state {
   position: absolute;
-  top: 2rem;
+  top: 10rem;
   right: 2rem;
 }
 
@@ -312,11 +313,25 @@
 
 .reservation-edit-bttn:hover,
 .reservation-delete-bttn:hover {
-  border: none;
+  border: 2px solid purple;
   background: purple;
 }
 
 /* -----------------------end to reservation---------------------- */
+
+/* ------------------action element --------------------*/
+.action {
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height:100%;
+  background: red;
+  z-index: 3;
+}
+/*------------------end of action element----------------*/
 
 
 @media  screen and (max-width: 1000px) {

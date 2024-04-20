@@ -248,6 +248,64 @@
 
 /* --------------------------end of Reservation state------------------------- */
 
+
+/* --------------------action confirmation------------------- */
+.action-confirmation-container {
+  width: fit-content;
+  height: fit-content;
+  color: white;
+  background: black;
+  padding: 5rem 10rem;
+  border-radius: 2rem;
+}
+
+.confirmation-text {
+  margin: 0 0 2rem 0;
+  font-size: 2rem;
+}
+
+.no-bttn {
+  padding: 1rem 2rem;
+  margin: 0 0 0 2rem;
+}
+
+.no-bttn:hover {
+  border-color: #852a2a;
+  background: #852a2a;
+}
+
+.no-bttn:active {
+  border-color: red;
+  background: red;
+}
+
+.yes-bttn {
+  padding: 1rem 2rem;
+  margin: 0 2rem 0 0;
+}
+
+.yes-bttn:hover {
+  border-color: #395e33;
+  background: #395e39;
+}
+
+.yes-bttn:active {
+  background: green;
+  border-color: green;
+}
+
+.yes-bttn, .no-bttn {
+  background: inherit;
+  width: fit-content;
+  height: fit-content;
+  color: inherit;
+  font-size: 2rem;
+  border-radius: 1rem;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+/* ----------------------end of action confirmation ---------------------- */
 @media screen and (max-width) {
 
 }

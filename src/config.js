@@ -123,11 +123,17 @@ const disable_element_style_behaviour = () => {
   })
 }
 
+const action_confirmation = (display) => {
+  let action_confirmation = document.querySelector(".action");
+  display ? action_confirmation.style.display = 'none' : 
+  action_confirmation.style.display = 'flex';
+}
+
 
 
 export {
   BASE_URL, get_auth_user, get_access_token, get_operation, get_operations,
   set_operation, send_alert, create_operations, sendRequest, get_from_storage,
   store_to_storage, enable_element_style_behaviour, disable_element_style_behaviour,
-  mobile_classes
+  action_confirmation
 };
