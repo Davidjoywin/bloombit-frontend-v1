@@ -62,7 +62,7 @@ const Login = () => {
 
       localStorage.setItem("login", JSON.stringify(login_user));
       set_operation('login', true);
-      return navigate("/main")
+      return navigate("/")
     })
   }
 

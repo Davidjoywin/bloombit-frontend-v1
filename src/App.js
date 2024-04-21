@@ -9,7 +9,6 @@ import Main from './components/pages/main';
 import { create_operations } from './config';
 import Aside from './components/common/aside';
 import Alert from './components/common/alert';
-import DrawContext from './components/common/context';
 import Reservation from './components/pages/reservation';
 import Specialist from './components/pages/specialist-page';
 import Appointment from './components/pages/appointment-form';

@@ -64,7 +64,8 @@ const create_operations = () => {
   let operations = {
     "login": {"text": "User Login Successfully", "status": false},
     "signup": {"text": "You registered successfully", "status": false},
-    "reservation": {"text": "New reservation made successfully", "status": false}
+    "reservation": {"text": "New reservation made successfully", "status": false},
+    "cancel_reservation": {"text": "You cancelled an appointment", "status": false},
   }
   localStorage.setItem("operations", JSON.stringify(operations));
 }
@@ -102,13 +103,13 @@ const remove_class = (klass, mobile_klass) => {
   element.classList.remove(mobile_klass);
 }
 
-const mobile_classes = [
+const _mobile_classes = [
   'main-header', 'draw-bttn', 'app-title',
   'aside', 'main-container'
 ];
 
 const enable_element_style_behaviour = () => {
-  mobile_classes.forEach(klass => {
+  _mobile_classes.forEach(klass => {
     let _klass = `.${klass}`;
     let mobile_klass = `mobile-${klass}`;
     add_class(_klass, mobile_klass);
@@ -116,17 +117,18 @@ const enable_element_style_behaviour = () => {
 }
 
 const disable_element_style_behaviour = () => {
-  mobile_classes.forEach(klass => {
+  _mobile_classes.forEach(klass => {
     let _klass = `.${klass}`;
     let mobile_klass = `mobile-${klass}`;
     remove_class(_klass, mobile_klass);
   })
 }
 
-const action_confirmation = (display) => {
+const action_confirmation_display = (is_display) => {
+  // displays the action confirmation button
   let action_confirmation = document.querySelector(".action");
-  display ? action_confirmation.style.display = 'none' : 
-  action_confirmation.style.display = 'flex';
+  is_display ? action_confirmation.style.display = 'flex' : 
+  action_confirmation.style.display = 'none';
 }
 
 
@@ -135,5 +137,5 @@ export {
   BASE_URL, get_auth_user, get_access_token, get_operation, get_operations,
   set_operation, send_alert, create_operations, sendRequest, get_from_storage,
   store_to_storage, enable_element_style_behaviour, disable_element_style_behaviour,
-  action_confirmation
+  action_confirmation_display
 };

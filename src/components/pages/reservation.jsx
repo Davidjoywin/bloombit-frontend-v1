@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 import Aside from '../common/aside';
 import Alert from '../common/alert';
-import { action_confirmation } from '../../config';
+import { set_operation, action_confirmation_display } from '../../config';
 import Header from '../common/header';
 import ReservationState from '../common/reservation-state';
 import ActionConfirmation from '../common/action-confirmation';
@@ -15,9 +15,9 @@ const Reservation = () => {
   const { id } = useParams();
   console.log(id);
 
-  const [reservation_state, setReservationState] = useState('completed');
+  const [reservation_state, setReservationState] = useState('not yet time');
 
-  const [action, setAction] = useState(true);
+  const [user_action, setUserAction] = useState(false);
 
   // const [user, setUser] = useState();
   const [isLoggedIn, setLogin] = useState();
@@ -26,13 +26,25 @@ const Reservation = () => {
   const login_user = JSON.parse(localStorage.getItem("login"));
 
   const activate_action_confirmation = () => {
-    setAction(true);
-    action_confirmation(true)
+    // makes the action confirmation element
+    // appear on the screen
+    if (!user_action) {
+      setUserAction(true);
+      action_confirmation_display(true)
+    }
   }
 
   const deactivate_action_confirmation = () => {
-    setAction(false);
-    action_confirmation(false);
+    // makes the action confirmation element
+    // disappear from the screen
+    setUserAction(false);
+    action_confirmation_display(false);
+  }
+
+  const yes_confirmation = () => {
+    setReservationState('cancelled');
+    action_confirmation_display(false);
+    set_operation("cancel_reservation", true);
   }
 
   useEffect(() => {
@@ -44,7 +56,7 @@ const Reservation = () => {
     <Alert />
     <div className="container">
       <div className="action">
-        {(action) ? <ActionConfirmation yes_func={() => setReservationState(true)} no_func={() => deactivate_action_confirmation()} /> : <></>}
+        {(user_action) ? <ActionConfirmation yes_func={() => yes_confirmation()} no_func={() => deactivate_action_confirmation()} /> : <></>}
       </div>
       <Aside />
       <div className="main-container">

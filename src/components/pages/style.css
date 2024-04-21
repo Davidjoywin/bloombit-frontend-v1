@@ -302,7 +302,7 @@
 
 .reservation-edit-bttn,
 .reservation-delete-bttn {
-  font-size: 2.5rem;
+  font-size: 2rem;
   padding: .5rem 2rem;
   color: white;
   cursor: pointer;
@@ -328,7 +328,7 @@
   align-items: center;
   width: 100%;
   height:100%;
-  background: red;
+  /* background: red; */
   z-index: 3;
 }
 /*------------------end of action element----------------*/
