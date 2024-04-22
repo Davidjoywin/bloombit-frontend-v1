@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { BASE_URL, get_access_token } from '../../config';
+import './style.css';
 
 const Aside = () => {
   const [reservations, setReservations] = useState([]);
@@ -35,7 +36,7 @@ const Aside = () => {
       }
       setReservations(res.data);
     })
-  }, reservations)
+  })
 
   return (
     <aside className="aside">
