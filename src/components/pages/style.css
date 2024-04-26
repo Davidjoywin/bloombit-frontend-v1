@@ -138,11 +138,11 @@
   overflow: auto;
 }
 
-.section-item:hover {
+/* .section-item:hover {
   width: 31rem;
   height: 31rem;
   z-index: 1;
-}
+} */
 
 .specialist-img {
   width: 90%;

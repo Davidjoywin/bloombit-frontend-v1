@@ -66,7 +66,8 @@ const create_operations = () => {
     "signup": {"text": "You registered successfully", "status": false},
     "reservation": {"text": "New reservation made successfully", "status": false},
     "cancel_reservation": {"text": "You cancelled an appointment", "status": false},
-    "failed_password_verification": {"text": "Password verification failed", "status": true},
+    "failed_password_verification": {"text": "Password verification failed", "status": false},
+    "new_user_registered": {"text": "New User Registered successfully", "status": false}
   }
   localStorage.setItem("operations", JSON.stringify(operations));
 }

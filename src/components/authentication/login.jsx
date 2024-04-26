@@ -61,6 +61,9 @@ const Login = () => {
       login_user['token'] = token_obj;
 
       localStorage.setItem("login", JSON.stringify(login_user));
+      
+      // operation to know the type of pop up alert 
+      // to be displayed
       set_operation('login', true);
       return navigate("/")
     })
