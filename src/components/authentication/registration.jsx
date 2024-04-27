@@ -27,8 +27,13 @@ const Registration = () => {
     e.preventDefault();
     const verified = register_user.password === verify_password;
 
-    (verified) ? set_operation("new_user_registered", true) : set_operation("failed_password_verification", true);
-    if(verified) user_registration();
+    (verified) ? user_registration() : failed_registration();
+  }
+
+  const failed_registration = () => {
+    setVerifyPassword("");
+    setRegisterUser({password: ""});
+    set_operation("failed_password_verification", true);
   }
 
   const user_registration = () => {
@@ -48,7 +53,7 @@ const Registration = () => {
       
       // operation to know the type of pop up alert 
       // to be displayed
-      // set_operation('registered', true);
+      set_operation('new_user_registered', true);
       return navigate("/")
     })
   }
@@ -56,8 +61,8 @@ const Registration = () => {
   return (
     <>
     {/* <Header /> */}
-    <Alert />
     <div className="login-container">
+      <Alert />
       <form className='register-form' onSubmit={(e) => submit_form(e)} >
         <h2 className="form-heading-register">Register</h2>
         <div className="label-input">
