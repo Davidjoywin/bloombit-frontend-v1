@@ -1,5 +1,7 @@
-const BASE_URL = "http://localhost:8080/api"
+import axios from "axios";
 
+
+const BASE_URL = "http://localhost:8080/api"
 
 const get_auth_user = () => {
   const login_user = JSON.parse(localStorage.getItem("login"));
@@ -16,6 +18,11 @@ const get_access_token = () => {
   }
   access_token = "";
   return access_token;
+}
+
+const HEADERS = {
+  "Authorization": `Bearer ${get_access_token()}`,
+  "Content-Type": "application/json"
 }
 
 const get_operation = (user_operation) => {
@@ -55,7 +62,6 @@ const get_from_storage = (key) => {
   let storage = JSON.parse(localStorage.getItem(key));
   return storage;
 }
-
 const store_to_storage = (key, value) => {
   localStorage.setItem(key, JSON.stringify(value));
 }
@@ -72,27 +78,34 @@ const create_operations = () => {
   localStorage.setItem("operations", JSON.stringify(operations));
 }
 
-const sendRequest = (URL, HEADERS) => {
-  fetch(URL, {headers: HEADERS})
-    .then(response => {
-      if (!response.ok) {
-        return response;
-      }
-      if (response.status === 401) {
-        console.log("You are not authorised yet")
-      }
-      if (response.status === 400) {
-        console.log("Bad request sent");
-      }
+const  sendRequest = ({endpoint, method='get', headers={}, body=null}) => {
+  const URL = BASE_URL + endpoint;
 
-      // return response.json();
-    })
-    .then(res => {
-      if (!res) {
-        return res
-      }
-      return res.data;
-    })
+  let req_data = fetch(URL, {headers: headers, method: method, body: body})
+  .then(response => {
+    if (!response.ok) {
+      return response;
+    }
+    if (response.status === 401) {
+      console.log("You are not authorised yet")
+    }
+    if (response.status === 400) {
+      console.log("Bad request sent");
+    }
+    return response.json();
+  })
+
+  // .then(res => {
+  //   if (!res.status) {
+  //     req_data = res.data;
+  //   }
+  //   return res.data;
+  // })
+  return req_data;
+}
+
+const getResponse = (res) => {
+  return res;
 }
 
 const add_class = (klass, mobile_klass) => {
@@ -136,8 +149,8 @@ const action_confirmation_display = (is_display) => {
 
 
 export {
-  BASE_URL, get_auth_user, get_access_token, get_operation, get_operations,
-  set_operation, send_alert, create_operations, sendRequest, get_from_storage,
+  BASE_URL, HEADERS, get_auth_user, get_access_token, get_operation, get_operations,
+  set_operation, send_alert, create_operations, sendRequest, getResponse, get_from_storage,
   store_to_storage, enable_element_style_behaviour, disable_element_style_behaviour,
   action_confirmation_display
 };

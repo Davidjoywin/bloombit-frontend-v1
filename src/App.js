@@ -9,6 +9,7 @@ import Main from './components/pages/main';
 import { create_operations } from './config';
 import Aside from './components/common/aside';
 import Alert from './components/common/alert';
+import Profile from './components/pages/profile';
 import Reservation from './components/pages/reservation';
 import Specialist from './components/pages/specialist-page';
 import Appointment from './components/pages/appointment-form';
@@ -37,6 +38,7 @@ function App() {
 
           <Route path='/'>
             <Route index element={<Main />} />
+            <Route path='profile' element={<Profile />} />
             <Route path='alert' element={<Alert />} />
             <Route path='r-test' element={<ActionConfirmation />} />
             <Route path="aside" element={<Aside />} />

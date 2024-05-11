@@ -42,6 +42,7 @@ const Aside = () => {
     <aside className="aside">
       <div className="nav-list">
         <Link to="/" className="nav-item">Home</Link>
+        <Link to="/profile" className="nav-item">Profile</Link>
         <Link to="/professional" className="nav-item">Professionals</Link>
         <Link to="/specialist" className="nav-item">Specialist Group</Link>
         <Link className="nav-item">Search</Link>
